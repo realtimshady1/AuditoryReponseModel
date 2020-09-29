@@ -7,7 +7,9 @@ The human ear is a complex system responsible for converting pressure variations
 
 ## Files
 **`middleFilter.m:`** The filter function that models the response of the middle and outer human ear
+
 **`EarModel.m:`** Main function that models the response with any given sample audio
+
 **`three.wav:`** Sample audio of a person saying "three", used for model implementation
 
 ## Implementation
@@ -15,11 +17,12 @@ The outer ear model which consists of the pinna and ear canal produce a resonant
 <p align="center">  <img src="Images/Outer_Model.png">  </p>
 The middle ear model consists of the Malleus, Incus and Stapes (Auditory Ossicles) and form an impedance matcher and amplifier. This translates to a response of 28dB at a resonant pole of 1kHz: 
 <p align="center">  <img src="Images/Middle_Response.png">  </p>
-Together, these two filters are cascaded to form a filter that is then fed into the cochlea. The function in `middleFilter.m`achieves this in the following fashion:
-<p align="center">  <img src="Images/Middle_Outer.PNG">  </p>
+Together, these two filters are cascaded to form a filter that is then fed into the cochlea. The function in `middleFilter.m` achieves this in the following fashion:
+<p align="center">  <img src="Images/Middle_Outer.png">  </p>
 Finally, the inner ear contains the cochlea which converts the vibrations received from the previous models and converts them into electrochemical impulses which are passed on to the brain through the auditory nerve. The cochlea is specified to be 3.5cm in length when uncoiled, and ar partitioned into two fuid canals, the scala vestibuli and scala tympani. Between them, the basilar membrane rests as a resonant structure, varying in width and stiffness which causes there to be different resonant frequencies at different points of the membrane. For this model, the assumption will be a resonant frequency range from 70Hz to 16kHz.
 <p align="center">  <img src="Images/Basilar_Membrane.PNG">  <img src="Images/Cochlear_Dimensions.PNG"></p>
 At each point of the basilar membrane, a passband filter will extract the impulse response of the passing signal. The number of impulse segments for this section is specified by default as 71, while the impulse response is given by:
+
 <p align="center">  <img src="Images/Impulse_Formula.PNG">  </p>
 where, ݂
 1. *f* is the centre frequency
@@ -39,6 +42,7 @@ The final output displays three comparative waveforms and a detected peak freque
 
 <p align="center">  <img src="Images/Output.png">  </p>
 For the default settings and results above, the system will output:
+
 `Peak filter 52 at 2252.3681 Hz`
 
 
