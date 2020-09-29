@@ -25,6 +25,7 @@ At each point of the basilar membrane, a passband filter will extract the impuls
 
 <p align="center">  <img src="Images/Impulse_Formula.PNG">  </p>
 where, ݂
+
 1. *f* is the centre frequency
 2. *T* is the sampling period
 3. *n* ݊ is the discrete time sample index
