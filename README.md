@@ -15,7 +15,7 @@ The human ear is a complex system responsible for converting pressure variations
 ## Implementation
 The outer ear model which consists of the pinna and ear canal produce a resonant frequency of roughly 3kHz with a peak gain of 20dB, represented through the following resonator model:
 <p align="center">  <img src="Images/Outer_Model.png">  </p>
-The middle ear model consists of the Malleus, Incus and Stapes (Auditory Ossicles) and form an impedance matcher and amplifier. This translates to a response of 28dB at a resonant pole of 1kHz: 
+The middle ear model consists of the Malleus, Incus and Stapes (Auditory Ossicles) and form an impedance matcher and amplifier. This translates to a response of 18dB at a resonant pole of 1kHz: 
 <p align="center">  <img src="Images/Middle_Response.png">  </p>
 Together, these two filters are cascaded to form a filter that is then fed into the cochlea. The function in `middleFilter.m` achieves this in the following fashion:
 <p align="center">  <img src="Images/Middle_Outer.png">  </p>
